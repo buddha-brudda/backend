@@ -7,4 +7,4 @@ app.route('/').get(function(req, res) {
   res.send('No home page.');
 });
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.VCAP_APP_PORT || 3000);
