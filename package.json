@@ -5,6 +5,7 @@
   "author": "Ian Macalinao <me@ian.pw>",
   "main": "app",
   "dependencies": {
+    "body-parser": "^1.8.1",
     "express": "^4.9.0",
     "mongoose": "^3.8.16"
   }
