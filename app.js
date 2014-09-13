@@ -36,7 +36,7 @@ app.route('/notify/:user').post(function(req, res) {
 });
 
 app.route('/notifications/:user').get(function(req, res) {
-  User.find({
+  Notification.find({
     user: req.params.user
   }).exec(function(err, docs) {
     res.json(docs);
