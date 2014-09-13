@@ -1,0 +1,11 @@
+{
+  "name": "buddhabrudda-backend",
+  "description": "Backend to Buddha Brudda",
+  "version": "0.1.0",
+  "author": "Ian Macalinao <me@ian.pw>",
+  "main": "app",
+  "dependencies": {
+    "express": "^4.9.0",
+    "mongoose": "^3.8.16"
+  }
+}
