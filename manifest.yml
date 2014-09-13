@@ -1,0 +1,12 @@
+applications:
+- services:
+  - MongoLab-b4
+  disk_quota: 1024M
+  host: buddhabrudda
+  name: buddhabrudda
+  command: node app.js
+  path: .
+  domain: mybluemix.net
+  instances: 1
+  memory: 512M
+
