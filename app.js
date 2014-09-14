@@ -1,6 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
+var request = require('superagent');
+
 mongoose.connect(JSON.parse(process.env.VCAP_SERVICES).mongolab[0].credentials.uri || 'mongodb://localhost:27017');
 
 var Notification = mongoose.model('Notification', new mongoose.Schema({
@@ -65,4 +67,14 @@ app.route('/callback/:callbackId').post(function(req, res) {
     callbackId: req.params.callbackId
   });
   res.send('OK');
+});
+
+app.route('/bloomberg').post(function(req, res) {
+  request.post('http://www.buddhabrudda.com/notify/4699553379')
+    .send({
+      text: 'The price of AAPL stock is ' + require('./bloomberg/AAPL.json').values.PX_CLOSE
+    })
+    .end(function(data) {
+      res.send('OK');
+    });
 });

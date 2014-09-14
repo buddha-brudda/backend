@@ -8,6 +8,7 @@
     "body-parser": "^1.8.1",
     "express": "^4.9.0",
     "mongoose": "^3.8.16",
-    "socket.io": "^1.1.0"
+    "socket.io": "^1.1.0",
+    "superagent": "^0.18.2"
   }
 }
