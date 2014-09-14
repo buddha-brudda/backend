@@ -1,4 +1,5 @@
 var express = require('express');
+var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 mongoose.connect(JSON.parse(process.env.VCAP_SERVICES).mongolab[0].credentials.uri || 'mongodb://localhost:27017');
 
@@ -12,7 +13,10 @@ var Notification = mongoose.model('Notification', new mongoose.Schema({
 }));
 
 var app = express();
-app.use(require('body-parser').json());
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({
+  extended: false
+}));
 app.use(express.static(__dirname + '/public'));
 
 app.route('/notify/:user').post(function(req, res) {
