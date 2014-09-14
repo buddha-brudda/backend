@@ -76,6 +76,9 @@ app.route('/read/:user').post(function(req, res) {
     user: req.params.user,
     id: req.body.id
   }).exec(function(err, doc) {
+    if (!doc) {
+      return;
+    }
     doc.remove(function() {
       res.send('OK');
     });
