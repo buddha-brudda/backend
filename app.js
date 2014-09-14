@@ -66,7 +66,8 @@ app.route('/notifications/:user').get(function(req, res) {
 
 app.route('/callback/:callbackId').post(function(req, res) {
   io.emit('cbcalled', {
-    query: req.query,
+    name: req.query.name,
+    action: req.query.action,
     callbackId: req.params.callbackId
   });
   res.send('OK');
