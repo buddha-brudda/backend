@@ -8,32 +8,34 @@
 
 <body>
   <div class="container">
-    <div class="col-md-4 col-md-offset-4">
-      <h1 class="page-header">Send Notification</h1>
-      <p>Use this page to send a sample test notification.</p>
-      <form role="form" id="sendNotification">
-        <div class="form-group">
-          <label for="name">Phone #</label>
-          <input type="text" id="name" />
-        </div>
-        <div class="form-group">
-          <label for="text">Text</label>
-          <input type="text" id="text" />
-        </div>
-        <div class="form-group">
-          <label for="image">Image</label>
-          <input type="text" id="image" />
-        </div>
-        <div class="form-group">
-          <label for="actions">Actions</label>
-          <input type="text" id="actions" />
-        </div>
-        <div class="form-group">
-          <label for="callback">Callback</label>
-          <input type="text" id="callback" />
-        </div>
-        <button type="submit" class="btn btn-primary">Send Notification</button>
-      </form>
+    <div class="row">
+      <div class="col-md-6">
+        <h1 class="page-header">Send Notification</h1>
+        <p>Use this page to send a sample test notification.</p>
+        <form role="form" id="sendNotification">
+          <div class="form-group">
+            <label for="name" class="control-label col-md-2">Phone #</label>
+            <input type="text" class="col-md-4" id="name" />
+          </div>
+          <div class="form-group">
+            <label for="text" class="control-label col-md-2">Text</label>
+            <input type="text" class="col-md-4" id="text" />
+          </div>
+          <div class="form-group">
+            <label for="image" class="control-label col-md-2">Image</label>
+            <input type="text" class="col-md-4" id="image" />
+          </div>
+          <div class="form-group">
+            <label for="actions" class="control-label col-md-2">Actions</label>
+            <input type="text" class="col-md-4" id="actions" />
+          </div>
+          <div class="form-group">
+            <label for="callback" class="control-label col-md-2">Callback</label>
+            <input type="text" class="col-md-4" id="callback" />
+          </div>
+          <button type="submit" class="btn btn-primary">Send Notification</button>
+        </form>
+      </div>
     </div>
   </div>
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
