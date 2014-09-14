@@ -6,10 +6,16 @@ mongoose.connect(JSON.parse(process.env.VCAP_SERVICES).mongolab[0].credentials.u
 var Notification = mongoose.model('Notification', new mongoose.Schema({
   text: String,
   image: String,
-  actions: [String],
   callback: String, // url
   user: String,
-  date: Date
+  date: Date,
+  reactions: [new mongoose.Schema({
+    text: String,
+    closeNotification: Boolean,
+    redirection: String,
+    postRequest: String,
+    reqResponse: String
+  })]
 }));
 
 var port = process.env.VCAP_APP_PORT || 3000;
