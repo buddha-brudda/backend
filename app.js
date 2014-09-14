@@ -15,6 +15,7 @@ var Notification = mongoose.model('Notification', new mongoose.Schema({
 var app = express();
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
+  next();
 });
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
