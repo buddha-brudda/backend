@@ -16,11 +16,7 @@ $('#sendNotification').submit(function(e) {
 });
 
 $('#bloomberg').click(function() {
-  $.post('/notify/4699553379', {
-    text: 'The price of AAPL stock is ' + ,
-    image: image,
-    callback: callback
-  }, function(err, data) {
+  $.post('/bloomberg', {}, function(err, data) {
     alert('Posted');
   });
 });
