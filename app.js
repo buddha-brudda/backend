@@ -6,6 +6,7 @@ var request = require('superagent');
 mongoose.connect(JSON.parse(process.env.VCAP_SERVICES).mongolab[0].credentials.uri || 'mongodb://localhost:27017');
 
 var Notification = mongoose.model('Notification', new mongoose.Schema({
+  id: String,
   text: String,
   image: String,
   callback: String, // url
