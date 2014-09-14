@@ -5,7 +5,7 @@ socket.on('cbcalled', function(data) {
     var votesUp = parseInt($('#votesUp').html());
     var votesDown = parseInt($('#votesDown').html());
 
-    if (data.action === 'Up') {
+    if (data.action === 'Upvote') {
       $('#votesUp').html(votesUp + 1);
     } else {
       $('#votesDown').html(votesDown + 1);
