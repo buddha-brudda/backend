@@ -13,6 +13,9 @@ var Notification = mongoose.model('Notification', new mongoose.Schema({
 }));
 
 var app = express();
+var server = app.listen(process.env.VCAP_APP_PORT || 3000);
+var io = require('socket.io')(server);
+
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Headers', 'X-Requested-With');
@@ -49,4 +52,6 @@ app.route('/notifications/:user').get(function(req, res) {
   });
 });
 
-app.listen(process.env.VCAP_APP_PORT || 3000);
+app.route('/callback/:callbackId').get(function(req, res) {
+
+});
