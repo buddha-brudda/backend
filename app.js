@@ -38,10 +38,10 @@ app.route('/notify/:user').post(function(req, res) {
   var notification = new Notification({
     text: req.body.text,
     image: req.body.image,
-    actions: req.body.actions,
     callback: req.body.callback,
     user: req.params.user,
-    date: new Date()
+    date: new Date(),
+    reactions: req.body.reactions
   });
   notification.save(function(err) {
     if (err) {
