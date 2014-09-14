@@ -57,4 +57,5 @@ app.route('/callback/:callbackId').get(function(req, res) {
     query: req.query,
     callbackId: req.params.callbackId
   });
+  res.send('OK');
 });
