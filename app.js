@@ -53,5 +53,5 @@ app.route('/notifications/:user').get(function(req, res) {
 });
 
 app.route('/callback/:callbackId').get(function(req, res) {
-
+  io.emit('cbcalled', req.query);
 });
