@@ -38,6 +38,7 @@ app.use(express.static(__dirname + '/public'));
 
 app.route('/notify/:user').post(function(req, res) {
   var notification = new Notification({
+    id: req.body.text + new Date() + Math.random(),
     text: req.body.text,
     image: req.body.image,
     callback: req.body.callback,
