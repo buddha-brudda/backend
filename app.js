@@ -3,6 +3,8 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var request = require('superagent');
 
+var ghettoRedis = {};
+
 mongoose.connect(JSON.parse(process.env.VCAP_SERVICES).mongolab[0].credentials.uri || 'mongodb://localhost:27017');
 
 var Notification = mongoose.model('Notification', new mongoose.Schema({
@@ -106,5 +108,10 @@ app.route('/votenotif').post(function(req, res){
     .end(function(data) {
       res.send('OK');
     });
+});
+
+app.route('/sendgrid').post(function(req, res) {
+  ghettoRedis.sendgrid = !ghettoRedis.sendgrid;
+  res.send('OK');
 });
 
