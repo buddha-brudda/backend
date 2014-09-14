@@ -8,11 +8,43 @@
       font-size: 20px;
       text-align: center;
     }
-    </style> 
+    #container {
+      margin: 0 auto;
+      width: 768px;
+    }
+    body {
+      font-family: Calibri, Helvetica, Arial, sans-serif;
+    }
+    .col {
+      float: left;
+      font-size: 40px;
+      width: 33%;
+      text-align: center;
+    }
+    #votesUp {
+      color: #00ff00;
+    }
+    #votesDown {
+      color: #ff0000;
+    }
+  </style>
 </head>
 
 <body>
-  <div id="message"></div>
+  <div id="container">
+    <div id="votes">
+      <div class="col">
+        <p>Votes</p>
+      </div>
+      <div class="col">
+        <p>Up: <span id="votesUp">0</span></p>
+      </div>
+      <div class="col">
+        <p>Down: <span id="votesDown">0</span></p>
+      </div>
+    </div>
+    <div id="message"></div>
+  </div>
   <script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="//cdn.socket.io/socket.io-1.1.0.js"></script>
   <script src="/visualization.js"></script>
