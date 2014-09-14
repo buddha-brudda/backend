@@ -10,15 +10,11 @@ var Notification = mongoose.model('Notification', new mongoose.Schema({
   text: String,
   image: String,
   callback: String, // url
-  callbackResponse: String,
   user: String,
   date: Date,
   reactions: [new mongoose.Schema({
     text: String,
-    closeNotification: Boolean,
-    redirection: String,
-    reactionPostReq: String,
-    reqResponse: String
+    redirection: String
   })]
 }));
 
