@@ -12,9 +12,10 @@ var Notification = mongoose.model('Notification', new mongoose.Schema({
   date: Date
 }));
 
+var port = process.env.VCAP_APP_PORT || 3000;
 var app = express();
-var server = app.listen(process.env.VCAP_APP_PORT || 3000);
-var io = require('socket.io')(server);
+var server = require('http').createServer(app).listen(port);
+var io = require('socket.io').listen(server);
 
 app.use(function(req, res, next) {
   res.header('Access-Control-Allow-Origin', '*');
