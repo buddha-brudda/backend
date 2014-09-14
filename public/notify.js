@@ -20,3 +20,9 @@ $('#bloomberg').click(function() {
     alert('Posted');
   });
 });
+
+$('#votenotif').click(function() {
+  $.post('/votenotif', {}, function(err, data) {
+    alert('Posted');
+  });
+});

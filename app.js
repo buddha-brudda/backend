@@ -90,3 +90,21 @@ app.route('/bloomberg').post(function(req, res) {
       res.send('OK');
     });
 });
+
+app.route('/votenotif').post(function(req, res){
+  request.post('http://www.buddhabrudda.com/notify/4699553379')
+    .send({
+      text: 'Vote!',
+      image: 'http://www.buddhabrudda.com/img/vote-for-me.gif',
+      callback: 'http://www.buddhabrudda.com/callback/VOTE',
+      reactions: [{
+        text: 'Upvote'
+      }, {
+        text: 'Downvote'
+      }]
+    })
+    .end(function(data) {
+      res.send('OK');
+    });
+});
+
