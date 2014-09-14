@@ -1,4 +1,4 @@
 buddhabruddha backend
 =====================
 
-The backend to Buddha Brudda.
+backend for Buddha Brudda
