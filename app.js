@@ -69,6 +69,17 @@ app.route('/callback/:callbackId').post(function(req, res) {
   res.send('OK');
 });
 
+app.route('/read/:user').post(function(req, res) {
+  Notification.findOne({
+    user: req.params.user,
+    id: req.body.id
+  }).exec(function(err, doc) {
+    doc.remove(function() {
+      res.send('OK');
+    });
+  });
+});
+
 app.route('/bloomberg').post(function(req, res) {
   request.post('http://www.buddhabrudda.com/notify/4699553379')
     .send({
