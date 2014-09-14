@@ -13,10 +13,7 @@ var Notification = mongoose.model('Notification', new mongoose.Schema({
 
 var app = express();
 app.use(require('body-parser').json());
-
-app.route('/').get(function(req, res) {
-  res.send('No home page.');
-});
+app.use(express.static(__dirname + '/public'));
 
 app.route('/notify/:user').post(function(req, res) {
   var notification = new Notification({
