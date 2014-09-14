@@ -83,7 +83,8 @@ app.route('/read/:user').post(function(req, res) {
 app.route('/bloomberg').post(function(req, res) {
   request.post('http://www.buddhabrudda.com/notify/4699553379')
     .send({
-      text: 'The price of AAPL stock is ' + require('./bloomberg/AAPL.json').values.PX_CLOSE
+      text: 'The price of AAPL stock is ' + require('./bloomberg/AAPL.json').values.PX_CLOSE,
+      image: 'http://www.buddhabrudda.com/img/money.png'
     })
     .end(function(data) {
       res.send('OK');
