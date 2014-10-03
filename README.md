@@ -1,4 +1,4 @@
-buddha brudda backend
+notify-me backend
 =====================
 
-backend for Buddha Brudda
+backend for NotifyMe
